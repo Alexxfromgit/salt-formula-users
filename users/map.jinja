@@ -1,12 +1,6 @@
 {% set users = salt['grains.filter_by']({
     'Debian': {
-        'user': 'canonical',
-        'rmuser': 'redhat',
-        'key': 'salt://ubuntu.pem',
     },
     'RedHat': {
-        'user': 'redhat',
-        'rmuser': 'canonical',
-        'key': 'salt://centos.pem',
     },
 }, grain='os_family', merge=salt['pillar.get']('users')) %}
